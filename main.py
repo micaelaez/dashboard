@@ -7,6 +7,7 @@ st.set_page_config(page_title='Informacion de Libros',
 
 st.title(':books: Informacion de Libros')
 st.subheader('¿Qué libros aprobados se encuentran en librerías?')
+st.sidebar.image("imagen/logo.png")
 archivo_excel = 'Editoriales_aprobados.xlsx'
 hoja_excel = 'BASE DE DATOS'
 
@@ -17,6 +18,12 @@ DEPARTAMENTO_SOLICITANTE=st.sidebar.multiselect(
     "seleccione el departamento:",
     options = df_libros['DEPARTAMENTO_SOLICITANTE'].unique(),
     default = df_libros['DEPARTAMENTO_SOLICITANTE'].unique()
+)
+
+DISTRITO_SOLICITANTE=st.sidebar.multiselect(
+    "seleccione el distrito:",
+    options = df_libros['DISTRITO_SOLICITANTE'].unique(),
+    default = df_libros['DISTRITO_SOLICITANTE'].unique()
 )
 
 NOMBRES_SOLICITANTE=st.sidebar.multiselect(
