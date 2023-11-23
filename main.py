@@ -91,7 +91,10 @@ left_column, right_column = st.columns(2)
 left_column.plotly_chart(fig_libro, use_container_width= True)
 right_column.plotly_chart(fig_libro_2, use_container_width= True)
 
-
+#  este es un gráfico de Barras por Departamento
+st.subheader("Distribución de Títulos por Departamento")
+df_departamento = df_opcion.groupby('DEPARTAMENTO_SOLICITANTE')['TITULO'].count()
+st.bar_chart(df_departamento)
 
 
 
